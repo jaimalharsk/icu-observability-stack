@@ -1,0 +1,9 @@
+[sources.demo_logs]
+type = "demo_logs"
+format = "json"
+interval = 5.0
+
+[sinks.victoriametrics_out]
+type = "prometheus_remote_write"
+inputs = ["demo_logs"]
+endpoint = "http://victoriametrics:8428/api/v1/write"

@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  victoriametrics:
+    image: victoriametrics/victoria-metrics:latest
+    ports:
+      - "8428:8428"
+    volumes:
+      - vm_data:/storage
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    volumes:
+      - ./otel-collector.yaml:/etc/otelcol-contrib/config.yaml
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+
+  vector:
+    image: timberio/vector:latest-debian
+    volumes:
+      - ./vector.toml:/etc/vector/vector.toml
+    ports:
+      - "8686:8686"
+
+volumes:
+  vm_data:
+  grafana_data:
