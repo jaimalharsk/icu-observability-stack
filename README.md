@@ -132,6 +132,8 @@ After each scenario, run `normal` to reset all beds to safe values.
 ## Dashboard
  
 The Grafana dashboard (`ICU Floor 1`) shows all 4 metrics across all 5 beds using color-coded stat panels:
+
+![Live Demo](p2.png)
  
 - **Green** = within safe range
 - **Red** = critical threshold breached
