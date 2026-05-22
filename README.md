@@ -1,6 +1,8 @@
 # ICU Floor Observability Stack
  
 A real-time equipment watchdog simulation for hospital ICU floors, built on a **Raspberry Pi 5** using open-source observability tooling. Demonstrates metric ingestion, threshold alerting, and live dashboarding — the same primitives used in production infrastructure monitoring.
+
+![Live Demo](p1.png)
  
 ---
  
